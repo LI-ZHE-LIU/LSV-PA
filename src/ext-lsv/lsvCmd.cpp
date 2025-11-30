@@ -10,9 +10,15 @@
 static int Lsv_CommandPrintNodes(Abc_Frame_t* pAbc, int argc, char** argv);
 static int Lsv_CommandPrintMoCut(Abc_Frame_t* pAbc, int argc, char** argv);
 
+int Lsv_CommandUnateBdd(Abc_Frame_t* pAbc, int argc, char** argv);
+int Lsv_CommandUnateSat(Abc_Frame_t* pAbc, int argc, char** argv);
+
 void init(Abc_Frame_t* pAbc) {
   Cmd_CommandAdd(pAbc, "LSV", "lsv_print_nodes", Lsv_CommandPrintNodes, 0);
   Cmd_CommandAdd(pAbc, "LSV", "lsv_printmocut", Lsv_CommandPrintMoCut, 0);
+  Cmd_CommandAdd(pAbc, "LSV", "lsv_unate_bdd", Lsv_CommandUnateBdd, 0);
+  Cmd_CommandAdd(pAbc, "LSV", "lsv_unate_sat",   Lsv_CommandUnateSat, 0);
+  
 }
 
 void destroy(Abc_Frame_t* pAbc) {}
